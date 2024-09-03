@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = (props) => {
     const host="http://localhost:5000/api/auth/login";
     const [credentials,setCredentials]=useState({email:"",password:""});
@@ -23,7 +23,7 @@ const Login = (props) => {
             navigate("/");
           }
           else{
-            props.showAlert("Invalid Credentials","danger")
+            props.showAlert("User not found or Invalid Credentials","danger")
           }
     }
     const onChange=(e)=>{
@@ -33,6 +33,7 @@ const Login = (props) => {
     return (
         <div className='container w-75 bg-light rounded shadow p-5' style={{marginBottom:"40px"}}>
             <h2 className='text-center'><strong>Please Login to continue</strong></h2>
+            <p className='text-center' style={{fontSize:"13px",color:'gray'}}>Create a new account? <Link to="/signup"><span>Sign Up</span></Link></p>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>

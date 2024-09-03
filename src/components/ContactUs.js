@@ -27,7 +27,7 @@ const ContactUs =(props)=> {
       });
     };
     return (
-      <div className="container my-5">
+      <div className="container my-3">
         <div className="p-4 bg-light text-dark rounded shadow">
           <h4 className="text-center mb-4">Contact Us</h4>
           <p className="text-center lead mb-4">
@@ -38,15 +38,15 @@ const ContactUs =(props)=> {
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="name" className="form-label">Name</label>
-                  <input type="text" className="form-control bg-light text-light border-secondary" id="name" placeholder="Your Name" name='name' value={cdetails.name} onChange={onChange}/>
+                  <input type="text" className="form-control bg-light text-dark border-secondary" id="name" placeholder="Your Name" name='name' value={cdetails.name} onChange={onChange} minLength={1} required/>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">Email</label>
-                  <input type="email" className="form-control bg-light text-light border-secondary" id="email" placeholder="Your Email" name='email' value={cdetails.email} onChange={onChange}/>
+                  <input type="email" className="form-control bg-light text-dark border-secondary" id="email" placeholder="Your Email" name='email' value={cdetails.email} onChange={onChange} minLength={1} required/>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="msg" className="form-label">Message</label>
-                  <textarea className="form-control bg-light text-dark border-secondary" id="msg" rows="5" placeholder="Your Message" name='msg' value={cdetails.msg} onChange={onChange}></textarea>
+                  <textarea className="form-control bg-light text-dark border-secondary" id="msg" rows="5" placeholder="Your Message" name='msg' value={cdetails.msg} onChange={onChange} minLength={1} required></textarea>
                 </div>
                 <button type="submit" className="btn btn-outline-dark w-100" onClick={scrollToTop}>Send Message</button>
               </form>

@@ -4,13 +4,13 @@ const Contact = require('../models/Contact');
 const { body, validationResult } = require('express-validator');
 
 router.post('/cdetails',[
-    body('name', 'Enter a valid Name').isLength({ min: 3 }),
-    body('email', 'Enter a valid Email').isLength({ min: 8 }),
-    body('msg', 'Enter a valid Message').isLength({ min: 10 }),
+    body('name', 'Enter a valid Name').isLength({ min: 1 }),
+    body('email', 'Enter a valid Email').isEmail(),
+    body('msg', 'Enter a valid Message').isLength({ min: 1 }),
 ], async (req, res) => {
     try {
         //requesting name,email and message from body which user enter
-        const { name, email, msg } = req.body;
+        // const { name, email, msg } = req.body;
         //if errors return bad request and errors
         const errors = validationResult(req);
         if (!errors.isEmpty()) {

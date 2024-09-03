@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = (props) => {
     const host="http://localhost:5000/api/auth/createuser";
@@ -39,6 +39,7 @@ const SignUp = (props) => {
     return (
         <div className='container w-75 bg-light rounded shadow p-5' style={{marginBottom: "40px" }}>
             <h2 className='text-center'><strong>Sign Up</strong></h2>
+            <p className='text-center' style={{fontSize:"13px",color:'gray'}}>Already have an account. <Link to="/login"><span>Login</span></Link></p>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Enter your name</label>
