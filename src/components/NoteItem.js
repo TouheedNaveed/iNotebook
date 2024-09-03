@@ -16,7 +16,7 @@ const NoteItem = (props) => {
         <div className='col-md-3'>
             <div className="card my-3">
                 <div className="card-body bg-warning rounded shadow">
-                    <h4 className="card-title"><strong>Title: </strong> {note.title}</h4>
+                    <h6 className="card-title"><strong>Title: </strong><span style={{fontWeight:'normal',fontSize:'18px'}}>{note.title}</span> </h6>
                     <p className="card-text"><strong>Description: </strong> <br /> {note.description}</p>
                     <p className="card-text"><strong>Tag: </strong>{note.tag}</p>
                     <div className="d-flex justify-content-end align-items-center gap-3">
