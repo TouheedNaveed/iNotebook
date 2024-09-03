@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link, useLocation,useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Navbar = (props) => {
     let location = useLocation();
-    let navigate=useNavigate();
-    const handleLogout=()=>{
+    let navigate = useNavigate();
+    const handleLogout = () => {
         localStorage.removeItem('token');
-        props.showAlert("User Logout Successfully.","success");
+        props.showAlert("User Logout Successfully.", "success");
         navigate('/login');
     }
+    const userName = localStorage.getItem('userName');
     return (
         <>
             <nav className="navbar fixed-top navbar-expand-lg bg-warning navbar-light">
@@ -29,10 +30,15 @@ const Navbar = (props) => {
                                 <Link className={`nav-link ${location.pathname === "/contactus" ? "active" : ""}`} aria-current="page" to="/contactus">Contact Us</Link>
                             </li>
                         </ul>
-                        {!localStorage.getItem('token')?<form className="d-flex gap-3">
+                        {!localStorage.getItem('token') ? <form className="d-flex gap-3">
                             <Link type="button" className="btn btn-dark rounded" role='button' to="/login">Login</Link>
                             <Link type="button" className="btn btn-light rounded" role='button' to="/signup">Sign up</Link>
-                        </form>:<button onClick={handleLogout} className='btn btn-dark rounded'>Logout</button>}
+                        </form> :
+                            <>
+                                <span className="navbar-text mx-3">Welcome, {userName}</span>
+                                <button onClick={handleLogout} className='btn btn-dark rounded'>Logout</button>
+                            </>
+                        }
                     </div>
                 </div>
             </nav>
