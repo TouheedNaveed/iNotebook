@@ -22,7 +22,6 @@ const AddNote = (props) => {
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value });
     };
-
     return (
         <>
             <div className="container bg-light rounded shadow p-5" style={{marginBottom: "50px" }}>

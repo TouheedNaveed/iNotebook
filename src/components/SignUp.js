@@ -29,6 +29,12 @@ const SignUp = (props) => {
     const onChange=(e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value})
     }
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
     return (
         <div className='container w-75 bg-light rounded shadow p-5' style={{marginBottom: "40px" }}>
             <h2 className='text-center'><strong>Sign Up</strong></h2>
@@ -49,7 +55,7 @@ const SignUp = (props) => {
                     <label htmlFor="cpassword" className="form-label"> Confirm password</label>
                     <input type="password" className="form-control" id="cpassword" name='cpassword' onChange={onChange} minLength={8} required/>
                 </div>
-                <button type="submit" className="btn btn-dark" >Sign Up</button>
+                <button type="submit" className="btn btn-dark" onClick={scrollToTop}>Sign Up</button>
             </form>
         </div>
     )
