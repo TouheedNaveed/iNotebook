@@ -54,8 +54,9 @@ const ContactUs =(props)=> {
             <div className="col-md-6 d-flex flex-column justify-content-center">
               <h5>Contact Information</h5>
               <p className="lead">
-                <strong>Email:</strong> contact@iNotebook.com<br />
-                <strong>Phone:</strong> +123-456-7890
+                <strong>Email:</strong> otapjzqy@touheedcreative.freewebhostmost.com
+                <br />
+                <strong>Phone:</strong> +92-312-4012280
               </p>
             </div>
           </div>
