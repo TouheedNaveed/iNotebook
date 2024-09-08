@@ -14,8 +14,8 @@ const ContactUs =(props)=> {
           });
 
           const json = await response.json();
-          console.log(json);
             props.showAlert("Details sent Successfully","success");
+            setCdetails({name:"",email:"",msg:""});
     }
     const onChange=(e)=>{
         setCdetails({...cdetails,[e.target.name]:e.target.value})

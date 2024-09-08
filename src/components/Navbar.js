@@ -35,7 +35,7 @@ const Navbar = (props) => {
                             <Link type="button" className="btn btn-light rounded" role='button' to="/signup">Sign up</Link>
                         </form> :
                             <>
-                                <span className="navbar-text mx-3" style={{fontWeight:"bold"}}><i class="fa-solid fa-user mx-2"></i>{userName}</span>
+                                <span className="navbar-text mx-3" style={{fontWeight:"bold"}}><i className="fa-solid fa-user mx-2"></i>{userName}</span>
                                 <button onClick={handleLogout} className='btn btn-dark rounded'>Logout</button>
                             </>
                         }
