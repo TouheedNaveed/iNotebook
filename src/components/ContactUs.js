@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const ContactUs =(props)=> {
   const host="http://localhost:5000/api/contact/cdetails";
@@ -55,7 +56,7 @@ const ContactUs =(props)=> {
             <div className="col-md-6 d-flex flex-column justify-content-center">
               <h5>Contact Information</h5>
               <p className="lead">
-                <strong>Email:</strong> otapjzqy@touheedcreative.freewebhostmost.com
+                <strong>Email:</strong> <Link to="/" style={{textDecoration:'none',color:'black'}} >otapjzqy@touheedcreative.freewebhostmost.com</Link>
                 <br />
                 <strong>Phone:</strong> +92-312-4012280
               </p>
