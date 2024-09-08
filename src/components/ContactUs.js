@@ -12,8 +12,9 @@ const ContactUs =(props)=> {
             },
             body:JSON.stringify({name:cdetails.name,email:cdetails.email,msg:cdetails.msg})
           });
-
+          
           const json = await response.json();
+          console.log(json); 
             props.showAlert("Details sent Successfully","success");
             setCdetails({name:"",email:"",msg:""});
     }
